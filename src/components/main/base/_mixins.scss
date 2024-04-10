@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Permanent+Marker&display=swap');
+
+@mixin font($color, $size, $weight, $line, $spacing) {
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line;
+    letter-spacing: $spacing;
+    color: $color;
+}
+
+@mixin display-flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}

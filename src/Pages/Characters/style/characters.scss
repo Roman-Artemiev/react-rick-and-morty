@@ -1,0 +1,14 @@
+@import "./../../../components/main/main.scss";
+
+.characters {
+    .filters__container {
+        margin-top: 50px;
+        .filter {
+            padding: 0 15px;
+            width: 300px;
+            height: 60px;
+            background-color: $grey-light;
+            border-radius: 15px;
+        }
+    }
+}
