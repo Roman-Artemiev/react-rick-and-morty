@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function ApplyTextStroke({ text, strokeColor = "#09B20E", textColor = "#BDFFA0", textSize, strokeSize = "2", className }) {
+function ApplyTextStroke({ text, strokeColor = "#09B20E", textColor = "#BDFFA0", textSize, strokeSize = "2", className = "", elementType = 'div', elementValue = "" }) {
     const [containerStyle, setContainerStyle] = useState({});
     const tSize = parseInt(textSize);
     const sSmooth = 4;
@@ -50,10 +50,16 @@ function ApplyTextStroke({ text, strokeColor = "#09B20E", textColor = "#BDFFA0",
         renew();
     }, [text, strokeColor, textColor, textSize]);
 
+    const Element = elementType;
+
     return (
-        <div className={`ts ${className}`} style={containerStyle}>
+        <Element 
+        value={elementType !== "div" ? `${elementValue}` : undefined} 
+        className={`ts ${className}`} 
+        style={containerStyle}
+        >
         {text}
-        </div>
+        </Element>
     );
 }
 

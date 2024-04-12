@@ -1,0 +1,40 @@
+@import "./../../../main/main.scss";
+
+
+
+
+.characters__plagination {
+    padding-bottom: 50px;
+    @include display-flex(center, center);
+    column-gap: 15px;
+
+    .characters__plagination-prev {
+        margin-right: 10px;
+    }
+    
+    .characters__plagination-next {
+        margin-left: 10px;
+    }
+
+    .characters__plagination-nav {
+        @include display-flex(center, center);
+
+        width: 60px;
+        height: 40px;
+        background-color: $white;
+        border-radius: 15px;
+        transition: .4s;
+        cursor: pointer;
+
+        &:hover {
+            transition: .4s;
+            opacity: .8;
+        }
+    }
+
+    .characters__plagination-link {
+        font-family: $secondary-font;
+        @include font($white, 20px, 400, auto, 0);
+    }
+}
+
