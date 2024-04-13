@@ -4,6 +4,27 @@ body {
     background-color: $grey;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $grey-light;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $accent-color;
+}
+
+/* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #555;
+// }
+
+
 .wrapper {
     width: 1342px;
     padding: 0 15px;

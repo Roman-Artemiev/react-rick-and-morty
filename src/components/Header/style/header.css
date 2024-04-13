@@ -60,6 +60,19 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background-color: #292929; }
 
+/* width */
+::-webkit-scrollbar {
+  width: 14px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5A6268; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #BDFFA0; }
+
+/* Handle on hover */
 .wrapper {
   width: 1342px;
   padding: 0 15px;
