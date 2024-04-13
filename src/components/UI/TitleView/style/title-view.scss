@@ -1,0 +1,17 @@
+@import "./../../../main/main.scss";
+
+.title-view {
+    display: flex;
+    align-items: center;
+
+    .title-view__text {
+        text-align: center;
+    }
+
+    .title-view__line {
+        width: 40px;
+        height: 3px;
+        border-radius: 5px;
+        background-color: $grey-light;
+    }
+}

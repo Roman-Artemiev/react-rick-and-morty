@@ -5,6 +5,8 @@ import { Pagination, PaginationItem } from '@mui/material';
 import './style/characters.css';
 import ApplyTextStroke from '../../components/UI/ApplyTextStroke/ApplyTextStroke';
 import notFoundIllustration from "./../../components/main/img/not-foudn__illustration.png"
+import TitleView from '../../components/UI/TitleView/TitleView';
+import Plagination from '../../components/UI/Plagination/Plagination';
 
 const Characters = () => {
   const [data, setData] = useState([]);
@@ -45,7 +47,7 @@ const Characters = () => {
         const jsonData = await response.json();
         setData(jsonData); 
         setPageCount(jsonData.info.pages);
-        console.log(currentSpecies, currentStatus, currentGender);
+        // console.log(currentSpecies, currentStatus, currentGender);
         setIsNotFound(false);
         console.log(jsonData);
       
@@ -57,7 +59,7 @@ const Characters = () => {
   
   useEffect(() => {
     const fetchCharactersData = async () => {
-      try {
+      try { 
         const requests = [];
         const speciesArr = [];
         const statusArr = [];
@@ -99,7 +101,6 @@ const Characters = () => {
 
   const changePage = (event, thisPage) => {
     setCurrentPage(thisPage);
-    
   }
 
   const changeSpecies = (event) => {
@@ -247,11 +248,12 @@ const Characters = () => {
             <div key={character.id} id={character.id} className="characters__card">
                 <img src={character.image} className="characters__img" alt={character.name}/>
 
-                <div className="card__name-container">
-                  <span className="card__name-line"></span>
-                  <ApplyTextStroke text={character.name} textSize="20" className="card__name" />
-                  <span className="card__name-line"></span>
-                </div>
+                <TitleView
+                  textSize="20"
+                  text={character.name}
+                  lineWidth="40"
+                  lineHeight="3"
+                />
 
                 <div className="card__info">
                   <p className="card__info-text">
@@ -277,14 +279,11 @@ const Characters = () => {
         </div>
 
         
-        <div className="characters__plagination">
-            <Pagination 
-              count={pageCount} // Total number of pages
-              page={currentPage} // Current page
-              onChange={changePage} // Event handler for page change
-              color="primary"
-            />
-        </div>
+          <Plagination
+            pageCount={pageCount}
+            currentPage={currentPage}
+            handleChangePage={changePage}
+          />
 
       </div>
     </section>

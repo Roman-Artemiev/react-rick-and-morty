@@ -2,6 +2,7 @@ import React from 'react'
 import logo from "../main/img/logo.svg"
 import "./style/header.css"
 import ApplyTextStroke from '../UI/ApplyTextStroke/ApplyTextStroke'
+import { Link } from 'react-router-dom'
 
 
 
@@ -10,19 +11,24 @@ const Header = () => {
         <header className="header">
             <div className="wrapper">
                 <div className="header__wrapper">
-                    <img className='header__logo' src={logo} alt="Logo" />
+                    <Link to="/"> 
+                        <img className='header__logo' src={logo} alt="Logo" />
+                    </Link>
 
                     <nav className='header__nav'>
                         <ul className="header__list">
-                            <ApplyTextStroke
-                                text="Home" 
-                                textSize="24"
-                                className="header__item"
-                            />
-                            <li className="header__item">Characters</li>
-                            <li className="header__item">Episodes</li>
-                            <li className="header__item">Locations</li>
-                            <li className="header__item">Watch list</li>
+                            <Link to="/">
+                                <ApplyTextStroke
+                                    text="Home" 
+                                    textSize="24"
+                                    className="header__item"
+                                />
+                            </Link>
+
+                            <Link to='/characters' className="header__item">Characters</Link>
+                            <Link to='/episodes' className="header__item">Episodes</Link>
+                            <Link to='/locations' className="header__item">Locations</Link>
+                            <Link to='/watch-list' className="header__item">Watch list</Link>
                         </ul>
                     </nav>
                 </div>

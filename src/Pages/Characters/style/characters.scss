@@ -101,21 +101,10 @@
                 }
             }
     
-            .card__name-container {
-                @include display-flex(space-between, center);
-    
-                .card__name {
-                    text-align: center;
-                }
-    
-                .card__name-line {
-                    width: 40px;
-                    height: 3px;
-                    border-radius: 5px;
-                    background-color: $grey-light;
-                }
+            .title-view  {
+                justify-content: space-between;
             }
-    
+
     
             .card__info {
                 margin-top: 20px;
@@ -133,8 +122,6 @@
                 }
             }
         }
-    
-    
     }
 
     &__not-found {
@@ -160,69 +147,6 @@
     }
     
     &__plagination {
-        padding-bottom: 80px;
-        padding-top: 100px;
 
-        display: flex;
-        justify-content: center;   
-
-        .MuiPagination-ul {
-            li {
-                &:nth-child(1) {
-                    button{
-                       transform: rotate(180deg);
-                    }
-                }
-            }
-        }
-
-        .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-            background-color: $green;  
-            color: $accent-color;
-            transition: .4s;
-
-            &:hover {
-                transition: .4s;
-                opacity: .8;
-                background-color: $green;  
-            }
-        }
-        
-        .MuiPaginationItem-previousNext {
-            margin: 0 15px;
-            width: 60px;
-            height: 40px;
-            background-color: #fff;
-            border-radius: 15px;
-            transition: .5s;
-            opacity: 1;
-
-            background-image: url(../../../components/main/img/plagination__arrow.svg);
-            background-size: 30px;
-            background-position: center;
-            background-repeat: no-repeat;
-
-
-
-            &:hover {
-                transition: .5s;
-                opacity: 0.8;
-                background-color: #fff;
-            }
-
-            &:disabled {
-                opacity: 0.6;
-            }
-        }
-
-        .MuiPaginationItem-text {
-            color: $white;
-            font-family: $secondary-font;
-            font-size: 20px;
-        }
-
-        .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
-            display: none;
-        }
     }
 }

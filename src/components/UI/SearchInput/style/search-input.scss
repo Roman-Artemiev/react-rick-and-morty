@@ -1,0 +1,28 @@
+@import "./../../../main/main.scss";
+
+
+.search-input {
+    padding: 0 20px;
+    @include display-flex(space-between, center);
+    width: 400px;
+    height: 60px;
+    background-color: $grey-light;
+    border-radius: 15px;
+
+    &__input {
+        width: 100%;
+        margin-right: 20px;
+        font-size: 24px;
+        background-color: transparent;
+        color: $green;
+        text-indent: 4px;
+
+        &::placeholder {
+            color: $accent-color;
+        }
+    }
+
+    &__icon {
+        cursor: pointer;
+    }
+}

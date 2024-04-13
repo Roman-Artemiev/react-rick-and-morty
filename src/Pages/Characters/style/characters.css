@@ -160,17 +160,8 @@ body {
         .characters .characters__card-wrapper .characters__card .characters__img::after {
           width: 140%;
           height: 140%; }
-      .characters .characters__card-wrapper .characters__card .card__name-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center; }
-        .characters .characters__card-wrapper .characters__card .card__name-container .card__name {
-          text-align: center; }
-        .characters .characters__card-wrapper .characters__card .card__name-container .card__name-line {
-          width: 40px;
-          height: 3px;
-          border-radius: 5px;
-          background-color: #5A6268; }
+      .characters .characters__card-wrapper .characters__card .title-view {
+        justify-content: space-between; }
       .characters .characters__card-wrapper .characters__card .card__info {
         margin-top: 20px;
         display: flex;
@@ -206,44 +197,5 @@ body {
       line-height: auto;
       letter-spacing: 0;
       color: #fff; }
-  .characters__plagination {
-    padding-bottom: 80px;
-    padding-top: 100px;
-    display: flex;
-    justify-content: center; }
-    .characters__plagination .MuiPagination-ul li:nth-child(1) button {
-      transform: rotate(180deg); }
-    .characters__plagination .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-      background-color: #09B20E;
-      color: #BDFFA0;
-      transition: .4s; }
-      .characters__plagination .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover {
-        transition: .4s;
-        opacity: .8;
-        background-color: #09B20E; }
-    .characters__plagination .MuiPaginationItem-previousNext {
-      margin: 0 15px;
-      width: 60px;
-      height: 40px;
-      background-color: #fff;
-      border-radius: 15px;
-      transition: .5s;
-      opacity: 1;
-      background-image: url(../../../components/main/img/plagination__arrow.svg);
-      background-size: 30px;
-      background-position: center;
-      background-repeat: no-repeat; }
-      .characters__plagination .MuiPaginationItem-previousNext:hover {
-        transition: .5s;
-        opacity: 0.8;
-        background-color: #fff; }
-      .characters__plagination .MuiPaginationItem-previousNext:disabled {
-        opacity: 0.6; }
-    .characters__plagination .MuiPaginationItem-text {
-      color: #fff;
-      font-family: "Permanent Marker", cursive;
-      font-size: 20px; }
-    .characters__plagination .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
-      display: none; }
 
 /*# sourceMappingURL=characters.css.map */

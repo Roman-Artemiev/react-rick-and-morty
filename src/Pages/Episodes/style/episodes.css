@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Permanent+Marker&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus, :active {
+  outline: none; }
+
+a:focus, a:active {
+  outline: none; }
+
+nav, footer, header, aside {
+  display: block; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input, button, textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400; }
+
+body {
+  background-color: #292929; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 14px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5A6268; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #BDFFA0; }
+
+/* Handle on hover */
+.wrapper {
+  width: 1342px;
+  padding: 0 15px;
+  margin: 0 auto; }
+
+.episodes {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../../../components/main/img/fragments-bg.png); }
+  .episodes .search-input {
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 80px; }
+  .episodes .episodes__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 50px; }
+    .episodes .episodes__wrapper .episodes__box {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 20px;
+      margin: 0 auto;
+      width: 500px;
+      max-height: 300px;
+      background-color: #fff;
+      border-radius: 15px; }
+      .episodes .episodes__wrapper .episodes__box-favorite {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 50px;
+        background-color: #5A6268;
+        border-radius: 0 15px 0 15px;
+        cursor: pointer; }
+      .episodes .episodes__wrapper .episodes__box .title-view {
+        margin-bottom: 40px;
+        justify-content: left;
+        column-gap: 15px; }
+        .episodes .episodes__wrapper .episodes__box .title-view .title-view__line {
+          display: none; }
+      .episodes .episodes__wrapper .episodes__box .episodes__box-container {
+        height: 160px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 40px; }
+        .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: none;
+          flex-direction: column; }
+          .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container {
+            display: flex;
+            row-gap: 12px;
+            flex-direction: column; }
+            .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container .episodes__box-info__text {
+              font-family: "Comfortaa", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 24px;
+              line-height: auto;
+              letter-spacing: 0;
+              color: #5A6268; }
+              .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container .episodes__box-info__text span {
+                color: #23C934; }
+          .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info__btn {
+            width: 250px;
+            height: 40px;
+            background-color: #5A6268;
+            border-radius: 15px;
+            font-family: "Comfortaa", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: auto;
+            letter-spacing: 0;
+            color: #fff; }
+        .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-characters {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap; }
+          .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-characters img {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            margin: 10px; }
+
+/*# sourceMappingURL=episodes.css.map */

@@ -1,40 +1,68 @@
-@import "./../../../main/main.scss";
+@import "../../../main/main.scss";
 
+.plagination {
+    padding-bottom: 80px;
+    padding-top: 100px;
 
+    display: flex;
+    justify-content: center;   
 
-
-.characters__plagination {
-    padding-bottom: 50px;
-    @include display-flex(center, center);
-    column-gap: 15px;
-
-    .characters__plagination-prev {
-        margin-right: 10px;
+    .MuiPagination-ul {
+        li {
+            &:nth-child(1) {
+                button{
+                   transform: rotate(180deg);
+                }
+            }
+        }
     }
-    
-    .characters__plagination-next {
-        margin-left: 10px;
-    }
 
-    .characters__plagination-nav {
-        @include display-flex(center, center);
-
-        width: 60px;
-        height: 40px;
-        background-color: $white;
-        border-radius: 15px;
+    .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+        background-color: $green;  
+        color: $accent-color;
         transition: .4s;
-        cursor: pointer;
 
         &:hover {
             transition: .4s;
             opacity: .8;
+            background-color: $green;  
+        }
+    }
+    
+    .MuiPaginationItem-previousNext {
+        margin: 0 15px;
+        width: 60px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 15px;
+        transition: .5s;
+        opacity: 1;
+
+        background-image: url(../../../main/img/plagination__arrow.svg);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+
+
+        &:hover {
+            transition: .5s;
+            opacity: 0.8;
+            background-color: #fff;
+        }
+
+        &:disabled {
+            opacity: 0.6;
         }
     }
 
-    .characters__plagination-link {
+    .MuiPaginationItem-text {
+        color: $white;
         font-family: $secondary-font;
-        @include font($white, 20px, 400, auto, 0);
+        font-size: 20px;
+    }
+
+    .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
+        display: none;
     }
 }
-

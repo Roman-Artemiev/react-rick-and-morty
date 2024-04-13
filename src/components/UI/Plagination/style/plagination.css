@@ -78,36 +78,44 @@ body {
   padding: 0 15px;
   margin: 0 auto; }
 
-.characters__plagination {
-  padding-bottom: 50px;
+.plagination {
+  padding-bottom: 80px;
+  padding-top: 100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px; }
-  .characters__plagination .characters__plagination-prev {
-    margin-right: 10px; }
-  .characters__plagination .characters__plagination-next {
-    margin-left: 10px; }
-  .characters__plagination .characters__plagination-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center; }
+  .plagination .MuiPagination-ul li:nth-child(1) button {
+    transform: rotate(180deg); }
+  .plagination .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #09B20E;
+    color: #BDFFA0;
+    transition: .4s; }
+    .plagination .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected:hover {
+      transition: .4s;
+      opacity: .8;
+      background-color: #09B20E; }
+  .plagination .MuiPaginationItem-previousNext {
+    margin: 0 15px;
     width: 60px;
     height: 40px;
     background-color: #fff;
     border-radius: 15px;
-    transition: .4s;
-    cursor: pointer; }
-    .characters__plagination .characters__plagination-nav:hover {
-      transition: .4s;
-      opacity: .8; }
-  .characters__plagination .characters__plagination-link {
+    transition: .5s;
+    opacity: 1;
+    background-image: url(../../../main/img/plagination__arrow.svg);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat; }
+    .plagination .MuiPaginationItem-previousNext:hover {
+      transition: .5s;
+      opacity: 0.8;
+      background-color: #fff; }
+    .plagination .MuiPaginationItem-previousNext:disabled {
+      opacity: 0.6; }
+  .plagination .MuiPaginationItem-text {
+    color: #fff;
     font-family: "Permanent Marker", cursive;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: auto;
-    letter-spacing: 0;
-    color: #fff; }
+    font-size: 20px; }
+  .plagination .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
+    display: none; }
 
 /*# sourceMappingURL=plagination.css.map */
