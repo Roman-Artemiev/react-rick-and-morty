@@ -157,15 +157,5 @@ body {
             line-height: auto;
             letter-spacing: 0;
             color: #fff; }
-        .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-characters {
-          width: 50%;
-          height: 100%;
-          display: flex;
-          flex-wrap: wrap; }
-          .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-characters img {
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
-            margin: 10px; }
 
 /*# sourceMappingURL=episodes.css.map */

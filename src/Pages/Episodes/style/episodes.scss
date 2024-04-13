@@ -87,20 +87,6 @@
                         @include font($white, 20px, 400, auto, 0);
                     }
                 }
-    
-                .episodes__box-characters {
-                    width: 50%;
-                    height: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                  
-                    img {
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 5px;
-                        margin: 10px;
-                    }
-                }
             }
         }
     }

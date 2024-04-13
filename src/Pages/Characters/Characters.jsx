@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 // import Character from "./../../components/UI/Plagination/Plagination";
-import { Pagination, PaginationItem } from '@mui/material';
 import './style/characters.css';
 import ApplyTextStroke from '../../components/UI/ApplyTextStroke/ApplyTextStroke';
-import notFoundIllustration from "./../../components/main/img/not-foudn__illustration.png"
 import TitleView from '../../components/UI/TitleView/TitleView';
 import Plagination from '../../components/UI/Plagination/Plagination';
+import FiltrSelect from '../../components/UI/FiltrSelect/FiltrSelect';
+import FilterResetBtn from '../../components/UI/FilterResetBtn/FilterResetBtn';
+import FilterNotFound from '../../components/UI/FilterNotFound/FilterNotFound';
 
 const Characters = () => {
   const [data, setData] = useState([]);
@@ -108,7 +109,6 @@ const Characters = () => {
     fetchAllData();
   };
 
-
   const changeStatus = useCallback(event => {
     setCurrentStatus(event.target.value);
     fetchAllData();
@@ -129,116 +129,42 @@ const Characters = () => {
   }
 
 
-  function ApplyTextStrokeSelect({ text, strokeColor, textColor, textSize, containerElement }) {
-    useEffect(() => {
-        if (containerElement) {
-            applyTextStroke(text, strokeColor, textColor, containerElement, textSize);
-        }
-    }, [text, strokeColor, textColor, textSize, containerElement]);
-
-    return null; // This component doesn't render anything
-  }
-
-  function applyTextStroke(text, strokeColor, textColor, containerElement, textSize) {
-      var tSize = parseInt(textSize);
-      var sSmooth = 4;
-      var sSize = 1;
-
-      function getCSS(tFamily, tBold, tSize, tColor, size, color, smooth) {
-          var s = "";
-
-          var sm = smooth > 0 ? smooth + "px" : smooth + "  ";
-          var wp = size + "px";
-          for (var i = 0; i <= size; i++) {
-              var ip = i > 0 ? i + "px" : i + "  ";
-
-              s += "\t\t-" + ip + " -" + wp + " " + sm + " " + color + ",\n";
-              s += "\t\t " + ip + " -" + wp + " " + sm + " " + color + ",\n";
-              s += "\t\t-" + ip + "  " + wp + " " + sm + " " + color + ",\n";
-              s += "\t\t " + ip + "  " + wp + " " + sm + " " + color + ",\n";
-              s += "\t\t-" + wp + " -" + ip + " " + sm + " " + color + ",\n";
-              s += "\t\t " + wp + " -" + ip + " " + sm + " " + color + ",\n";
-              s += "\t\t-" + wp + "  " + ip + " " + sm + " " + color + ",\n";
-              s += "\t\t " + wp + "  " + ip + " " + sm + " " + color + ",\n";
-          }
-
-          s = s.slice(0, -2);
-
-          return {
-              css: ".ts {\n" + "\tfont-family: " + tFamily + ";\n\tfont-size: " + tSize + "px;" + (tBold ? "\n\tfont-weight: bold;" : "") + "\n\tcolor: " + tColor + ";\n\ttext-shadow: \n" + s + ";\n}\n/* created with http://protocoder.ru/css/strokeTextGen */\n",
-              prop: s
-          };
-      }
-
-      function renew() {
-          var tFamily = `'Permanent Marker', cursive`;
-          var tBold = false;
-          var s = getCSS(tFamily, tBold, tSize, strokeColor, sSize, strokeColor, sSmooth);
-
-          containerElement.style.fontFamily = tFamily;
-          containerElement.style.fontWeight = tBold ? "bold" : "normal";
-          containerElement.style.fontSize = tSize + "px";
-          containerElement.style.color = textColor;
-          containerElement.style.textShadow = s.prop;
-      }
-
-      renew();
-  }
-  
-
   return (
     <section className="characters">
       <Header />
 
       <div className="wrapper">
         <div className="characters__filters-container">
-          <ApplyTextStrokeSelect
-              text="Species"
-              strokeColor='#09B20E'
-              textColor='#BDFFA0'
-              textSize="20"
-              containerElement={document.getElementById("species")}
+          <FiltrSelect
+              text = "Species"
+              textSize ="20"
+              id = "species"
+              onChange = {changeSpecies}
+              selectValue = {currentSpecies}
+              array = {species}
           />
-          <select onChange={changeSpecies} id="species" className="filter filter__select filters--species" value={currentSpecies}>
-              <option value=" ">Species</option>
-              {species.map((specie, index) => (
-                  <option key={index} value={specie}>{specie}</option>
-              ))}
-          </select>
 
-          <ApplyTextStrokeSelect
-              text="Status"
-              strokeColor='#09B20E'
-              textColor='#BDFFA0'
-              textSize="20"
-              containerElement={document.getElementById("status")}
+
+          <FiltrSelect
+              text = "Status"
+              textSize ="20"
+              id = "status"
+              onChange = {changeStatus}
+              selectValue = {currentStatus}
+              array = {status}
           />
-          <select onChange={changeStatus} id="status" className="filter filter__select filters--status" value={currentStatus}>
-              <option value=" ">Status</option>
-              {status.map((status, index) => (
-                  <option key={index} value={status}>{status}</option>
-              ))}
-          </select>
 
-          <ApplyTextStrokeSelect
-              text="Gender"
-              strokeColor='#09B20E'
-              textColor='#BDFFA0'
-              textSize="20"
-              containerElement={document.getElementById("gender")}
+          <FiltrSelect
+              text = "Gender"
+              textSize ="20"
+              id = "gender"
+              onChange = {changeGender}
+              selectValue = {currentGender}
+              array = {gender}
           />
-          <select onChange={changeGender} id="gender" className="filter filter__select filters--gender" value={currentGender}>
-              <option value=" ">Gender</option>
-              {gender.map((gender, index) => (
-                  <option key={index} value={gender}>{gender}</option>
-              ))}
-          </select>
 
-          <ApplyTextStroke
-          onClick={resetFilters}
-            text="Reset"
-            textSize="20"
-            className="reset__btn filter"
+           <FilterResetBtn
+            onClick={resetFilters}
            />
         </div>
 
@@ -273,11 +199,10 @@ const Characters = () => {
           ))}
         </div>
 
-        <div className={`characters__not-found ${isNotFound ? "" : '_hide'}`}>
-          <img src={notFoundIllustration} alt="Not Found Rick And Morty" />
-          <p className='characters__not-found-text'>Sorry, but there are simply no quiet characters</p>
-        </div>
 
+          <FilterNotFound
+            text="Sorry, but there are simply no quiet characters"
+          />
         
           <Plagination
             pageCount={pageCount}

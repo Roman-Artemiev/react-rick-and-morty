@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Permanent+Marker&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus, :active {
+  outline: none; }
+
+a:focus, a:active {
+  outline: none; }
+
+nav, footer, header, aside {
+  display: block; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input, button, textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400; }
+
+body {
+  background-color: #292929; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 14px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #5A6268; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #BDFFA0; }
+
+/* Handle on hover */
+.wrapper {
+  width: 1342px;
+  padding: 0 15px;
+  margin: 0 auto; }
+
+.filter-select .filter {
+  padding: 0 15px;
+  text-indent: 4px;
+  height: 50px;
+  background-color: #5A6268;
+  border-radius: 15px;
+  font-family: "Comfortaa", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: auto;
+  letter-spacing: 0;
+  color: #fff;
+  cursor: pointer; }
+  .filter-select .filter__select {
+    width: 300px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url(../img/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center right 20px; }
+    .filter-select .filter__select::-ms-expand {
+      display: none; }
+
+/*# sourceMappingURL=filtr-select.css.map */
