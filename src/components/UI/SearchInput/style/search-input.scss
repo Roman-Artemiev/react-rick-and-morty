@@ -17,6 +17,10 @@
         color: $green;
         text-indent: 4px;
 
+        -webkit-text-fill-color: $accent-color;
+        -webkit-box-shadow: inset 0 0 0 50px $grey-light;
+
+
         &::placeholder {
             color: $accent-color;
         }

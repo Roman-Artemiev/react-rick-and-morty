@@ -3,6 +3,7 @@ import Episodes from "./Pages/Episodes/Episodes";
 import Home from "./Pages/Home/Home";
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom'
 import Locations from "./Pages/Locations/Locations";
+import WatchList from "./Pages/WatchList/WatchList";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/characters" element={ <Characters/> } />
           <Route path="/episodes" element={ <Episodes/> } />
           <Route path="/locations" element={ <Locations/> } />
+          <Route path="/watch-list" element={ <WatchList/> } />
         </Routes>
       </Router>
 

@@ -7,6 +7,7 @@ import FiltrSelect from '../../components/UI/FiltrSelect/FiltrSelect';
 import TitleView from '../../components/UI/TitleView/TitleView';
 import Plagination from '../../components/UI/Plagination/Plagination';
 import FilterResetBtn from '../../components/UI/FilterResetBtn/FilterResetBtn';
+import FilterNotFound from '../../components/UI/FilterNotFound/FilterNotFound';
 
 
 const Locations = () => {
@@ -15,7 +16,6 @@ const Locations = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
 
-
     const [type, setType] = useState([]);
     const [dimension, setDimension] = useState([]);
   
@@ -23,15 +23,30 @@ const Locations = () => {
     const [currentDimension, setCurrentDimension] = useState("");
 
 
+    const [isNotFound, setIsNotFound] = useState(false);
+    const [onSearchReset, setOnSearchReset] = useState(false);
+
+
 
     useEffect(() => {
         fetchData();
-    }, [currentPage, searchQuery, currentType, currentDimension]);
+    }, [currentPage, searchQuery, currentType, currentDimension, isNotFound]);
 
     const fetchData = async () => {
         try {
             const response = await fetch(`https://rickandmortyapi.com/api/location?page=${currentPage}&name=${searchQuery}&type=${currentType}&dimension=${currentDimension}`);
             const jsonData = await response.json();
+
+            if (!response.ok) {
+                if (response.status === 404) {
+                  console.error('Resource not found:', response.statusText);
+                  setIsNotFound(true);
+                } else {
+                  throw new Error('Failed to fetch data: ' + response.statusText);
+                }
+            }  else {
+                setIsNotFound(false);
+            }
 
             setData(jsonData.results);
             setPageCount(jsonData.info.pages);
@@ -97,14 +112,18 @@ const Locations = () => {
     
     const handleSearch = (query) => {
         setSearchQuery(query);
+        setOnSearchReset(false);
     };
 
 
     const resetFilters = () => {
         setCurrentType("");
         setCurrentDimension("");
+        setIsNotFound(false);
+        setSearchQuery("");
+        setOnSearchReset(true);
         fetchData();
-      }
+    }
     
     
   return (
@@ -112,7 +131,7 @@ const Locations = () => {
         <Header/>
 
         <div className="wrapper">
-            <SearchInput onSearch={handleSearch} />
+            <SearchInput onSearch={handleSearch} placeholder={"Search Location"} onReset={onSearchReset} />
             
             <div className="locations__filters">
                 <FiltrSelect
@@ -150,6 +169,12 @@ const Locations = () => {
                     </div>
                 ))}
             </div>
+
+
+            <FilterNotFound
+                isNotFound={isNotFound}
+                text="Sorry, but there are simply no quiet location"
+            />
 
 
             <Plagination pageCount={pageCount} currentPage={currentPage} handleChangePage={changePage} />

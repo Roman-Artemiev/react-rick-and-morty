@@ -93,7 +93,9 @@ body {
     font-size: 24px;
     background-color: transparent;
     color: #09B20E;
-    text-indent: 4px; }
+    text-indent: 4px;
+    -webkit-text-fill-color: #BDFFA0;
+    -webkit-box-shadow: inset 0 0 0 50px #5A6268; }
     .search-input__input::placeholder {
       color: #BDFFA0; }
   .search-input__icon {

@@ -69,7 +69,7 @@ const FiltrSelect = ({ text, textSize, id, onChange, selectValue, array }) => {
               containerElement={document.getElementById(id)}
         />
         <select onChange={onChange} id={id} className="filter filter__select" value={selectValue}>
-            <option value=" " selected>{text}</option>
+            <option value=" " defaultValue>{text}</option>
             {array.map((item, index) => (
                 <option key={index} value={item}>{item}</option>
             ))}

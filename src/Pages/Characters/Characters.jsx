@@ -29,7 +29,7 @@ const Characters = () => {
 
   useEffect(() => {
     fetchAllData();
-}, [currentPage, currentSpecies, currentStatus, currentGender, pageCount]);
+}, [currentPage, currentSpecies, currentStatus, currentGender, pageCount, isNotFound]);
 
 
 
@@ -44,7 +44,9 @@ const Characters = () => {
         } else {
           throw new Error('Failed to fetch data: ' + response.statusText);
         }
-      } 
+      }   else {
+        setIsNotFound(false);
+      }
         const jsonData = await response.json();
         setData(jsonData); 
         setPageCount(jsonData.info.pages);
@@ -125,6 +127,7 @@ const Characters = () => {
     setCurrentSpecies("");
     setCurrentStatus("");
     setCurrentGender("");
+    setIsNotFound(false);
     fetchAllData();
   }
 
@@ -201,6 +204,7 @@ const Characters = () => {
 
 
           <FilterNotFound
+            isNotFound={isNotFound}
             text="Sorry, but there are simply no quiet characters"
           />
         

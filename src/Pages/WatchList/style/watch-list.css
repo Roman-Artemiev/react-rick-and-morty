@@ -78,19 +78,21 @@ body {
   padding: 0 15px;
   margin: 0 auto; }
 
-.episodes {
+.watch-list {
   width: 100%;
   min-height: 100vh;
-  background-image: url(../../../components/main/img/fragments-bg.png); }
-  .episodes .search-input {
+  background-image: url(../../../components/main/img/fragments-bg.png);
+  padding-bottom: 100px; }
+  .watch-list .search-input {
     margin: 0 auto;
     margin-top: 100px;
     margin-bottom: 80px; }
-  .episodes .episodes__wrapper {
+  .watch-list__container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     row-gap: 50px; }
-    .episodes .episodes__wrapper .episodes__box {
+    .watch-list__container .watch-list__card {
       position: relative;
       display: flex;
       flex-wrap: wrap;
@@ -101,9 +103,20 @@ body {
       max-height: 300px;
       background-color: #fff;
       border-radius: 15px; }
-      .episodes .episodes__wrapper .episodes__box._favorite .episodes__box-favorite {
+    .watch-list__container .episodes__box {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 20px;
+      margin: 0 auto;
+      width: 500px;
+      max-height: 300px;
+      background-color: #fff;
+      border-radius: 15px; }
+      .watch-list__container .episodes__box._favorite .episodes__box-favorite {
         display: flex; }
-        .episodes .episodes__wrapper .episodes__box._favorite .episodes__box-favorite::before {
+        .watch-list__container .episodes__box._favorite .episodes__box-favorite::before {
           content: "";
           position: absolute;
           left: 50%;
@@ -115,13 +128,13 @@ body {
           height: 10px;
           filter: blur(5px);
           z-index: 1; }
-        .episodes .episodes__wrapper .episodes__box._favorite .episodes__box-favorite svg {
+        .watch-list__container .episodes__box._favorite .episodes__box-favorite svg {
           z-index: 2; }
-        .episodes .episodes__wrapper .episodes__box._favorite .episodes__box-favorite svg path {
+        .watch-list__container .episodes__box._favorite .episodes__box-favorite svg path {
           fill: #23C934; }
-      .episodes .episodes__wrapper .episodes__box._favorite .episodes__box-container .episodes__box-info .episodes__box-nav {
+      .watch-list__container .episodes__box._favorite .episodes__box-container .episodes__box-info .episodes__box-nav {
         display: flex; }
-      .episodes .episodes__wrapper .episodes__box-favorite {
+      .watch-list__container .episodes__box-favorite {
         position: absolute;
         right: 0;
         top: 0;
@@ -134,31 +147,31 @@ body {
         background-color: #5A6268;
         border-radius: 0 15px 0 15px;
         cursor: pointer; }
-        .episodes .episodes__wrapper .episodes__box-favorite.favorite-clicked {
+        .watch-list__container .episodes__box-favorite.favorite-clicked {
           background-color: red; }
-      .episodes .episodes__wrapper .episodes__box .title-view {
+      .watch-list__container .episodes__box .title-view {
         margin-bottom: 40px;
         justify-content: left;
         column-gap: 15px; }
-        .episodes .episodes__wrapper .episodes__box .title-view .title-view__line {
+        .watch-list__container .episodes__box .title-view .title-view__line {
           display: none; }
-      .episodes .episodes__wrapper .episodes__box .episodes__box-container {
+      .watch-list__container .episodes__box .episodes__box-container {
         height: 160px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         column-gap: 40px; }
-        .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info {
+        .watch-list__container .episodes__box .episodes__box-container .episodes__box-info {
           height: 100%;
           display: flex;
           justify-content: space-between;
           align-items: none;
           flex-direction: column; }
-          .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container {
+          .watch-list__container .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container {
             display: flex;
             row-gap: 12px;
             flex-direction: column; }
-            .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container .episodes__box-info__text {
+            .watch-list__container .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container .episodes__box-info__text {
               font-family: "Comfortaa", sans-serif;
               font-style: normal;
               font-weight: 700;
@@ -166,9 +179,9 @@ body {
               line-height: auto;
               letter-spacing: 0;
               color: #5A6268; }
-              .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container .episodes__box-info__text span {
+              .watch-list__container .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container .episodes__box-info__text span {
                 color: #23C934; }
-          .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info__btn {
+          .watch-list__container .episodes__box .episodes__box-container .episodes__box-info__btn {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -185,8 +198,8 @@ body {
             letter-spacing: 0;
             color: #fff;
             transition: .4s; }
-            .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info__btn:hover {
+            .watch-list__container .episodes__box .episodes__box-container .episodes__box-info__btn:hover {
               opacity: 0.8;
               transition: .4s; }
 
-/*# sourceMappingURL=episodes.css.map */
+/*# sourceMappingURL=watch-list.css.map */
