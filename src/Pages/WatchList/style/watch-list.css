@@ -74,10 +74,15 @@ body {
 
 /* Handle on hover */
 .wrapper {
-  width: 1342px;
-  padding: 0 15px;
+  max-width: 1432px;
+  padding: 0 60px;
   margin: 0 auto; }
 
+@media screen and (max-width: 500px) {
+  .wrapper {
+    max-width: 1432px;
+    padding: 0 30px;
+    margin: 0 auto; } }
 .watch-list {
   width: 100%;
   min-height: 100vh;
@@ -201,5 +206,12 @@ body {
             .watch-list__container .episodes__box .episodes__box-container .episodes__box-info__btn:hover {
               opacity: 0.8;
               transition: .4s; }
+
+@media screen and (max-width: 500px) {
+  .watch-list__container .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container .episodes__box-info__text {
+    font-size: 20px; }
+  .watch-list__container .episodes__box .episodes__box-container .episodes__box-info__btn {
+    width: 200px;
+    font-size: 18px; } }
 
 /*# sourceMappingURL=watch-list.css.map */

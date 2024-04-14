@@ -74,10 +74,15 @@ body {
 
 /* Handle on hover */
 .wrapper {
-  width: 1342px;
-  padding: 0 15px;
+  max-width: 1432px;
+  padding: 0 60px;
   margin: 0 auto; }
 
+@media screen and (max-width: 500px) {
+  .wrapper {
+    max-width: 1432px;
+    padding: 0 30px;
+    margin: 0 auto; } }
 .not-found {
   width: 100%;
   display: flex;
@@ -92,11 +97,20 @@ body {
     margin: 0 auto; }
   .not-found__text {
     font-family: "Comfortaa", sans-serif;
+    text-align: center;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: auto;
     letter-spacing: 0;
     color: #fff; }
+
+@media screen and (max-width: 700px) {
+  .not-found img {
+    margin: 0 auto;
+    width: 100%; } }
+@media screen and (max-width: 500px) {
+  .not-found__text {
+    font-size: 16px; } }
 
 /*# sourceMappingURL=filter-not-found.css.map */

@@ -74,10 +74,15 @@ body {
 
 /* Handle on hover */
 .wrapper {
-  width: 1342px;
-  padding: 0 15px;
+  max-width: 1432px;
+  padding: 0 60px;
   margin: 0 auto; }
 
+@media screen and (max-width: 500px) {
+  .wrapper {
+    max-width: 1432px;
+    padding: 0 30px;
+    margin: 0 auto; } }
 .episodes {
   width: 100%;
   min-height: 100vh;
@@ -89,7 +94,7 @@ body {
   .episodes .episodes__wrapper {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 50px; }
+    gap: 50px 40px; }
     .episodes .episodes__wrapper .episodes__box {
       position: relative;
       display: flex;
@@ -188,5 +193,12 @@ body {
             .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info__btn:hover {
               opacity: 0.8;
               transition: .4s; }
+
+@media screen and (max-width: 500px) {
+  .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info .episodes__box-info__container .episodes__box-info__text {
+    font-size: 20px; }
+  .episodes .episodes__wrapper .episodes__box .episodes__box-container .episodes__box-info__btn {
+    width: 200px;
+    font-size: 18px; } }
 
 /*# sourceMappingURL=episodes.css.map */

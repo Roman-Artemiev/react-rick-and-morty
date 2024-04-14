@@ -37,9 +37,9 @@
 
 .home {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 
-    @include display-flex(space-between, center);
+    @include display-flex(space-between, normal);
     flex-direction: column;
 
     &::before, &::after {
@@ -47,31 +47,40 @@
         position: absolute;
         bottom: 0;
         z-index: -1;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     &::before {
-        width: 356px;
+        width: 30%;
         height: 592px;
         left: 0;
         background-image: url(../img/morty-pic.png);
+        background-position: bottom left;
+        opacity: .6;
     }
 
     &::after {
-        width: 517px;
+        width: 35%;
         height: 756px;
         right: 0;
         background-image: url(../img/rick-pic.png);
+        background-position: bottom right;
+        opacity: .6;
     }
 
     .intro {
+        margin-top: 50px;
         text-align: center;
 
         &__title {
             letter-spacing: 0.05em;
+            font-size: 50px;
         }
         &__subtitle {
             margin: 0 auto;
             margin-bottom: 20px;
+            font-size: 40px;
             max-width: 480px;
             letter-spacing: 0.05em;
         }
@@ -85,14 +94,15 @@
             letter-spacing: 0.05em;
         }
 
-        
+
 
         &__btn {
             @include display-flex(center, center);
             margin: 0 auto;
+            margin-bottom: 40px;
             display: inline-block;
 
-
+            font-size: 24px;
             width: 240px;
             height: 60px;
             background-color: $grey-light;
@@ -108,16 +118,15 @@
     }
 
     .social-media__container {
-        margin-bottom: 30px;
-        display: flex;
-        align-items: center;
+        margin-bottom: 20px;
+        @include display-flex(center, center);
         column-gap: 30px;
 
         .social-media {
             @include display-flex(center,center);
 
-            width: 50px;
-            height: 50px;
+            width: 46px;
+            height: 46px;
             background-color: $white;
             border-radius: 50%;
             cursor: pointer;
@@ -136,6 +145,121 @@
                     transition: .5s;
                     fill: $accent-color;
                 }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .home {
+        .intro {
+            &__title {
+                font-size: 44px;
+            }
+
+            .intro__subtitle {
+                font-size: 28px;
+            }
+
+            .intro__description {
+                font-size: 18px;
+                max-width: 600px;
+            }
+
+            .intro__btn {
+                height: 50px;
+                width: 200px;
+                font-size: 20px;
+            }
+        }
+
+        .social-media__container {
+            margin-bottom: 20px;
+            .social-media {
+                width: 40px;
+                height: 40px;
+
+                svg {
+                    width: 22px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .home {
+        &::before {
+            width: 40%;
+            height: 592px;
+        }
+    
+        &::after {
+            width: 45%;
+            height: 756px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .home {
+        &::before {
+            width: 45%;
+            height: 592px;
+        }
+    
+        &::after {
+            width: 45%;
+            height: 756px;
+        }
+
+        .intro {
+            .intro__title {
+                font-size: 40px;
+            }
+
+            .intro__description {
+                margin-bottom: 30px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .home {
+        width: 100%;
+        min-height: 100vh;
+        background-image: url(../../../components/main/img/fragments-bg.png);
+        background-size: 200% auto;
+        z-index: -4;
+
+        &::before, &::after {
+            display: none;
+        }
+
+        .home-bg {
+            display: none;
+        }
+
+        .intro {
+            .intro__title {
+                margin-bottom: 2px;
+                font-size: 34px;
+            }
+
+            .intro__subtitle {
+                font-size: 22px;
+                max-width: 350px;
+            }
+
+            .intro__description {
+                margin-bottom: 30px;
+                font-size: 16px;
             }
         }
     }

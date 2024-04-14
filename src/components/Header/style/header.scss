@@ -71,6 +71,156 @@
 
 
             }
+
+            .menu {
+                display: none;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .header {
+        .header__wrapper {
+            .header__logo {
+                width: 200px;
+                height: 62px;
+            }
+
+            .header__nav {
+                &._active {
+                    .header__list {
+                        padding-top: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        right: 40px;
+                        top: 20px;
+                        position: absolute;
+                        width: 400px;
+                        height: 320px;
+                        background-color: rgba($grey-light, 0.8);
+                        border-radius: 15px;
+                        backdrop-filter: blur(10px);
+                        transition: .3s;
+                        z-index: 100;
+                    }
+
+                    .menu {
+                        z-index: 100;
+
+                        .menu-bar {
+                            position: absolute;
+                            width: 80%;
+                            border: 1.5px solid white;
+                            border-radius: 5px;
+                            transition: .3s;
+    
+                            &-1 {
+                                top: auto;
+                                transform: rotate(-45deg);
+                                transition: .3s;
+                            }
+    
+                            &-2 {
+                                display: none;
+                                transition: .3s;
+                            }
+    
+                            &-3 {
+                                bottom: auto;
+                                transform: rotate(45deg);
+                                transition: .3s;
+                            }
+                        }
+                    }
+                }
+
+                .header__list {
+                    display: none;
+                }
+
+                .menu {
+                    position: relative;
+                    width: 34px;
+                    height: 34px;
+                    cursor: pointer;
+                
+                    @include display-flex(center, center);
+                    flex-direction: column;
+                    transition: .3s;
+                
+                    .menu-bar {
+                        position: absolute;
+                        width: 80%;
+                        border: 1.5px solid white;
+                        border-radius: 5px;
+                        transition: .3s;
+
+                        &-1 {
+                            top: 8px;
+                            transition: .3s;
+                        }
+
+                        &-3 {
+                            bottom: 8px;
+                            transition: .3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .header {
+        .header__wrapper {
+            .header__logo {
+                width: 170px;
+                height: 52px;
+            }
+
+            .header__nav {
+                &._active {
+                    .header__list {
+                        right: 15px;
+                        top: 20px;
+                        width: calc(100% - 30px) ;
+                        height: 320px;
+                    }
+                }
+
+                .menu {
+                    position: relative;
+                    width: 34px;
+                    height: 34px;
+                    cursor: pointer;
+                
+                    @include display-flex(center, center);
+                    flex-direction: column;
+
+                
+                    .menu-bar {
+                        position: absolute;
+                        width: 80%;
+                        border: 1.5px solid white;
+                        border-radius: 5px;
+                        transition: .3s;
+
+                        &-1 {
+                            top: 8px;
+                        }
+
+                        &-3 {
+                            bottom: 8px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

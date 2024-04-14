@@ -74,10 +74,15 @@ body {
 
 /* Handle on hover */
 .wrapper {
-  width: 1342px;
-  padding: 0 15px;
+  max-width: 1432px;
+  padding: 0 60px;
   margin: 0 auto; }
 
+@media screen and (max-width: 500px) {
+  .wrapper {
+    max-width: 1432px;
+    padding: 0 30px;
+    margin: 0 auto; } }
 .home-bg {
   position: absolute;
   width: 100%;
@@ -107,33 +112,42 @@ body {
     opacity: 0; } }
 .home {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: normal;
   flex-direction: column; }
   .home::before, .home::after {
     content: "";
     position: absolute;
     bottom: 0;
-    z-index: -1; }
+    z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat; }
   .home::before {
-    width: 356px;
+    width: 30%;
     height: 592px;
     left: 0;
-    background-image: url(../img/morty-pic.png); }
+    background-image: url(../img/morty-pic.png);
+    background-position: bottom left;
+    opacity: .6; }
   .home::after {
-    width: 517px;
+    width: 35%;
     height: 756px;
     right: 0;
-    background-image: url(../img/rick-pic.png); }
+    background-image: url(../img/rick-pic.png);
+    background-position: bottom right;
+    opacity: .6; }
   .home .intro {
+    margin-top: 50px;
     text-align: center; }
     .home .intro__title {
-      letter-spacing: 0.05em; }
+      letter-spacing: 0.05em;
+      font-size: 50px; }
     .home .intro__subtitle {
       margin: 0 auto;
       margin-bottom: 20px;
+      font-size: 40px;
       max-width: 480px;
       letter-spacing: 0.05em; }
     .home .intro__description {
@@ -153,7 +167,9 @@ body {
       justify-content: center;
       align-items: center;
       margin: 0 auto;
+      margin-bottom: 40px;
       display: inline-block;
+      font-size: 24px;
       width: 240px;
       height: 60px;
       background-color: #5A6268;
@@ -164,16 +180,17 @@ body {
         transition: .4s;
         opacity: .8; }
   .home .social-media__container {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     display: flex;
+    justify-content: center;
     align-items: center;
     column-gap: 30px; }
     .home .social-media__container .social-media {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 50px;
-      height: 50px;
+      width: 46px;
+      height: 46px;
       background-color: #fff;
       border-radius: 50%;
       cursor: pointer;
@@ -187,5 +204,64 @@ body {
         .home .social-media__container .social-media:hover svg path {
           transition: .5s;
           fill: #BDFFA0; }
+
+@media screen and (max-width: 1200px) {
+  .home .intro__title {
+    font-size: 44px; }
+  .home .intro .intro__subtitle {
+    font-size: 28px; }
+  .home .intro .intro__description {
+    font-size: 18px;
+    max-width: 600px; }
+  .home .intro .intro__btn {
+    height: 50px;
+    width: 200px;
+    font-size: 20px; }
+  .home .social-media__container {
+    margin-bottom: 20px; }
+    .home .social-media__container .social-media {
+      width: 40px;
+      height: 40px; }
+      .home .social-media__container .social-media svg {
+        width: 22px; } }
+@media screen and (max-width: 800px) {
+  .home::before {
+    width: 40%;
+    height: 592px; }
+  .home::after {
+    width: 45%;
+    height: 756px; } }
+@media screen and (max-width: 600px) {
+  .home::before {
+    width: 45%;
+    height: 592px; }
+  .home::after {
+    width: 45%;
+    height: 756px; }
+  .home .intro .intro__title {
+    font-size: 40px; }
+  .home .intro .intro__description {
+    margin-bottom: 30px;
+    font-size: 16px; } }
+@media screen and (max-width: 500px) {
+  .home {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../../../components/main/img/fragments-bg.png);
+    background-size: 200% auto;
+    z-index: -4; }
+    .home::before, .home::after {
+      display: none; }
+    .home .home-bg {
+      display: none; }
+    .home .intro .intro__title {
+      margin-bottom: 2px;
+      font-size: 34px; }
+    .home .intro .intro__subtitle {
+      font-size: 22px;
+      max-width: 350px; }
+    .home .intro .intro__description {
+      margin-bottom: 30px;
+      font-size: 16px; } }
 
 /*# sourceMappingURL=home.css.map */

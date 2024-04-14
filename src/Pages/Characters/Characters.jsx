@@ -132,6 +132,31 @@ const Characters = ({ isCharacters }) => {
   }
 
 
+  const [shortPaginationView, setShortPaginationView] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      const windowWidth = window.innerWidth;
+      if (windowWidth >= 600) {
+        setShortPaginationView(true);
+      } else {
+        setShortPaginationView(false);
+      }
+    }
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Call handleResize initially to set the initial state
+    handleResize();
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   return (
     <section className="characters">
       <Header isCharacters={isCharacters} />
@@ -140,7 +165,6 @@ const Characters = ({ isCharacters }) => {
         <div className="characters__filters-container">
           <FiltrSelect
               text = "Species"
-              textSize ="20"
               id = "species"
               onChange = {changeSpecies}
               selectValue = {currentSpecies}
@@ -150,7 +174,6 @@ const Characters = ({ isCharacters }) => {
 
           <FiltrSelect
               text = "Status"
-              textSize ="20"
               id = "status"
               onChange = {changeStatus}
               selectValue = {currentStatus}
@@ -159,7 +182,6 @@ const Characters = ({ isCharacters }) => {
 
           <FiltrSelect
               text = "Gender"
-              textSize ="20"
               id = "gender"
               onChange = {changeGender}
               selectValue = {currentGender}
@@ -175,7 +197,9 @@ const Characters = ({ isCharacters }) => {
         <div className="characters__card-wrapper">
           {data.results && data.results.map(character => (
             <div key={character.id} id={character.id} className="characters__card">
-                <img src={character.image} className="characters__img" alt={character.name}/>
+                <div className="characters__img">
+                  <img src={character.image} alt={character.name}/>
+                </div>
 
                 <TitleView
                   textSize="20"
@@ -209,6 +233,7 @@ const Characters = ({ isCharacters }) => {
           />
         
           <Plagination
+            defaultPage={6} siblingCount={shortPaginationView ? 1 : 0}
             pageCount={pageCount}
             currentPage={currentPage}
             handleChangePage={changePage}

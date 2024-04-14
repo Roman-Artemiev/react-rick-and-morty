@@ -160,3 +160,27 @@
         }
     }
 }
+
+
+@media screen and (max-width: 500px) {
+    .watch-list {
+        &__container {
+            .episodes__box  {
+                .episodes__box-container {
+                    .episodes__box-info {
+                        .episodes__box-info__container {
+                            .episodes__box-info__text {
+                                font-size: 20px;
+                            }
+                        }
+
+                        &__btn {
+                            width: 200px;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

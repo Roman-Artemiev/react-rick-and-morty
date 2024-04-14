@@ -15,7 +15,7 @@
         display: flex; 
         // flex-direction: column;
         flex-wrap: wrap;
-        row-gap: 50px;
+        gap: 50px 40px;
 
         .episodes__box {
             position: relative;
@@ -119,34 +119,6 @@
                             }
                         }
                     }
-
-                    // .episodes__box-nav {
-                    //     display: none;
-                    //     column-gap: 25px;
-
-                    //     svg {
-                    //         transition: .3s;
-                    //         cursor: pointer;
-
-                    //         path {
-                    //             transition: .3s;
-                    //         }
-                    //     }
-
-                    //     &__heart-icon:hover {
-                    //         transition: .3s;
-                    //         opacity: .6;
-                    //     }
-
-                    //     &__trash-icon:hover {
-                    //         transition: .3s;
-                    //         path {
-                    //             transition: .3s;
-                    //             fill: #FF0000;
-                    //         }
-                    //     }
-                    // }
-    
     
                     &__btn {
                         @include display-flex(center, center);
@@ -163,6 +135,30 @@
                         &:hover {
                             opacity: 0.8;
                             transition: .4s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .episodes {
+        .episodes__wrapper {
+            .episodes__box  {
+                .episodes__box-container {
+                    .episodes__box-info {
+                        .episodes__box-info__container {
+                            .episodes__box-info__text {
+                                font-size: 20px;
+                            }
+                        }
+
+                        &__btn {
+                            width: 200px;
+                            font-size: 18px;
                         }
                     }
                 }

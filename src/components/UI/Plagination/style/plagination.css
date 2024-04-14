@@ -74,10 +74,15 @@ body {
 
 /* Handle on hover */
 .wrapper {
-  width: 1342px;
-  padding: 0 15px;
+  max-width: 1432px;
+  padding: 0 60px;
   margin: 0 auto; }
 
+@media screen and (max-width: 500px) {
+  .wrapper {
+    max-width: 1432px;
+    padding: 0 30px;
+    margin: 0 auto; } }
 .plagination {
   padding-bottom: 80px;
   padding-top: 100px;
@@ -117,5 +122,12 @@ body {
     font-size: 20px; }
   .plagination .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
     display: none; }
+
+@media screen and (max-width: 600px) {
+  .plagination .MuiPagination-ul {
+    flex-wrap: wrap;
+    row-gap: 30px;
+    align-items: center;
+    justify-content: center; } }
 
 /*# sourceMappingURL=plagination.css.map */

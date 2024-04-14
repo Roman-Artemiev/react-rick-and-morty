@@ -23,7 +23,8 @@
         margin-bottom: 80px;
 
         @include display-flex(space-around, center);
-        column-gap: 25px;
+        flex-wrap: wrap;
+        gap: 30px 25px;
     }
 
     
@@ -65,6 +66,95 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .locations {
+        .filter-select {
+            .filter {
+                &__select { 
+                    width: 300px;
+                }
+            }
+        }
+
+        .reset__btn {
+            width: 300px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .locations {
+        .locations__wrapper {
+            .locations__box {
+                .title-view {
+                    margin-bottom: 40px;
+                    justify-content: left;
+                    column-gap: 15px;
+
+                    .title-view__text {
+                        text-align: left;
+                    }
+
+                    .title-view__line {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .filter-select {
+            .filter {
+                &__select { 
+                    font-size: 16px !important;
+                    width: 260px;
+                }
+            }
+        }
+
+        .reset__btn {
+            width: 260px;
+            font-size: 20px;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .locations {
+        .locations__filters {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .locations__wrapper {
+            .locations__box {
+                .locations__box-info__container {
+                    .locations__box-info__text  {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+
+        .filter-select {
+            width: 100%;
+
+            .filter {
+                &__select { 
+                    width: 100%;
+                }
+            }
+        }
+
+        .reset__btn {
+            width: 100%;
+            font-size: 20px;
         }
     }
 }

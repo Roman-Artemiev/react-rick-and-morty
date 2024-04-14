@@ -136,7 +136,6 @@ const Locations = ({ isLocations }) => {
             <div className="locations__filters">
                 <FiltrSelect
                     text = "Type"
-                    textSize ="20"
                     id = "type"
                     onChange = {changeType}
                     selectValue = {currentType}
@@ -145,7 +144,6 @@ const Locations = ({ isLocations }) => {
 
                 <FiltrSelect
                     text = "Dimension"
-                    textSize ="20"
                     id="dimension"
                     onChange={changeDimension}
                     selectValue={currentDimension}

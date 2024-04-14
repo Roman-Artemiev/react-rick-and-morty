@@ -23,16 +23,14 @@ const Home = ({isHome}) => {
 
         <div className="intro">
             <div className="wrapper">
-                <h1 className="intro__title"></h1>
                 <ApplyTextStroke
                 text = "Rick and Morty"
-                textSize="50"
                 className="intro__title"
                 />
 
                 <ApplyTextStroke
                 text="Your Favorite Cartoon Adventure"
-                textSize="40"
+                // textSize="40"
                 className="intro__subtitle"
                 />
 
@@ -43,7 +41,6 @@ const Home = ({isHome}) => {
                 <Link className='' to="/characters">
                     <ApplyTextStroke
                     text="Get Started"
-                    textSize="24"
                     className="intro__btn"
                     elementType="button"
                     />

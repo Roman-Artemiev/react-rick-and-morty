@@ -18,6 +18,27 @@
 
     &__text {
         font-family: $main-font;
+        text-align: center;
         @include font($white, 18px, 700, auto, 0);
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .not-found {
+        img {
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .not-found {
+        &__text {
+            font-size: 16px;
+        }
     }
 }
