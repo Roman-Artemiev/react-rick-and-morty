@@ -115,7 +115,8 @@ body {
   .home::before, .home::after {
     content: "";
     position: absolute;
-    bottom: 0; }
+    bottom: 0;
+    z-index: -1; }
   .home::before {
     width: 356px;
     height: 592px;
@@ -152,6 +153,7 @@ body {
       justify-content: center;
       align-items: center;
       margin: 0 auto;
+      display: inline-block;
       width: 240px;
       height: 60px;
       background-color: #5A6268;

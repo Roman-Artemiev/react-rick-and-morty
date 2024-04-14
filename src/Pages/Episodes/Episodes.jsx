@@ -7,7 +7,7 @@ import FilterNotFound from '../../components/UI/FilterNotFound/FilterNotFound';
 
 import './style/episodes.css';
 
-const Episodes = () => {
+const Episodes = ({ isEpisodes }) => {
     const [data, setData] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
@@ -65,7 +65,7 @@ const Episodes = () => {
 
     return (
         <section className='episodes'>
-            <Header />
+            <Header isEpisodes={isEpisodes} />
             <div className="wrapper">
                 <SearchInput onSearch={handleSearch} placeholder={"Search Episode"} />
                 <div className="episodes__wrapper">

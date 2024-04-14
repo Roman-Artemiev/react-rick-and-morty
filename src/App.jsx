@@ -10,11 +10,11 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={ <Home/> } />
-          <Route path="/characters" element={ <Characters/> } />
-          <Route path="/episodes" element={ <Episodes/> } />
-          <Route path="/locations" element={ <Locations/> } />
-          <Route path="/watch-list" element={ <WatchList/> } />
+          <Route path="/" element={ <Home isHome={true} /> } />
+          <Route path="/characters" element={ <Characters isCharacters={true}/> } />
+          <Route path="/episodes" element={ <Episodes isEpisodes={true}/> } />
+          <Route path="/locations" element={ <Locations isLocations={true}/> } />
+          <Route path="/watch-list" element={ <WatchList isWatchList={true}/> } />
         </Routes>
       </Router>
 

@@ -10,7 +10,7 @@ import FilterResetBtn from '../../components/UI/FilterResetBtn/FilterResetBtn';
 import FilterNotFound from '../../components/UI/FilterNotFound/FilterNotFound';
 
 
-const Locations = () => {
+const Locations = ({ isLocations }) => {
     const [data, setData] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
@@ -128,7 +128,7 @@ const Locations = () => {
     
   return (
     <section className='locations'>
-        <Header/>
+        <Header isLocations={isLocations}/>
 
         <div className="wrapper">
             <SearchInput onSearch={handleSearch} placeholder={"Search Location"} onReset={onSearchReset} />

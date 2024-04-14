@@ -46,6 +46,7 @@
         content: "";
         position: absolute;
         bottom: 0;
+        z-index: -1;
     }
 
     &::before {
@@ -84,9 +85,13 @@
             letter-spacing: 0.05em;
         }
 
+        
+
         &__btn {
             @include display-flex(center, center);
             margin: 0 auto;
+            display: inline-block;
+
 
             width: 240px;
             height: 60px;

@@ -9,7 +9,7 @@ import HomeBg from "./img/homeBg"
 import { Link } from "react-router-dom";
 
 
-const Home = () => {
+const Home = ({isHome}) => {
   return (
     <section className='home'>
         <HomeBg 
@@ -19,7 +19,7 @@ const Home = () => {
             circleType3="home-bg-circle-3"
         />
 
-        <Header/>
+        <Header isHome={isHome}/>
 
         <div className="intro">
             <div className="wrapper">
@@ -40,11 +40,12 @@ const Home = () => {
                  Step into the chaotic universe of Rick and Morty! Join us for a mind-bending adventure through dimensions, outrageous humor, and intergalactic escapades on our inspired website.
                 </p>
 
-                <Link to="/characters">
+                <Link className='' to="/characters">
                     <ApplyTextStroke
                     text="Get Started"
                     textSize="24"
                     className="intro__btn"
+                    elementType="button"
                     />
                 </Link>
             </div>

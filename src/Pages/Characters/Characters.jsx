@@ -9,7 +9,7 @@ import FiltrSelect from '../../components/UI/FiltrSelect/FiltrSelect';
 import FilterResetBtn from '../../components/UI/FilterResetBtn/FilterResetBtn';
 import FilterNotFound from '../../components/UI/FilterNotFound/FilterNotFound';
 
-const Characters = () => {
+const Characters = ({ isCharacters }) => {
   const [data, setData] = useState([]);
   
   const [pageCount, setPageCount] = useState()
@@ -134,7 +134,7 @@ const Characters = () => {
 
   return (
     <section className="characters">
-      <Header />
+      <Header isCharacters={isCharacters} />
 
       <div className="wrapper">
         <div className="characters__filters-container">

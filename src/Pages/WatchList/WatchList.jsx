@@ -7,7 +7,7 @@ import TitleView from '../../components/UI/TitleView/TitleView';
 import FilterNotFound from '../../components/UI/FilterNotFound/FilterNotFound';
 
 
-const WatchList = () => {
+const WatchList = ({ isWatchList }) => {
     const [episodes, setEpisodes] = useState(JSON.parse(localStorage.getItem("favoriteEpisodes")));
     const [data, setData] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
@@ -79,7 +79,7 @@ const WatchList = () => {
 
   return (
     <div className='watch-list'>
-        <Header/>
+        <Header isWatchList={isWatchList}/>
 
         <div className="wrapper">
             <SearchInput onSearch={handleSearch} placeholder={"Seach by the name"}/>
